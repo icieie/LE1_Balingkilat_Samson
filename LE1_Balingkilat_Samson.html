@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Little Phony</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #FCF7EC;
+        }
+        heading {
+            float: left;
+        }
+        #title {
+            font-family: 'Comic Neue';
+            font-size: 4vw;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-left: 10px;
+            margin-bottom: 0px;
+            padding: 0px;
+            color: #795F55;
+        }
+        #img1 {
+            height: 12vw;
+            width: 12vw;
+        }
+        #img2 {
+            height: 13vw;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 35vw 1fr;
+            grid-template-rows: repeat(auto-fit, minmax(150px, 3fr));
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        @media (max-width: 570px) {
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(330px, 3fr));
+                grid-template-rows: repeat(auto-fit, minmax(150px, 3fr));
+                padding: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        #contact-list {
+            text-align: center;
+            float: left;
+            height: 3vw;
+            margin-bottom: 3vw;
+        }
+        #cd {
+            background-color: #DFEADD;
+            border-radius: 10px;
+            height: 13vw;
+            width: 100%;
+        }
+        #contact-details {
+            float: left;
+        }
+        #contact-title {
+            color: #795F55;
+            font-family: 'Gaegu';
+            font-size: 3vw;
+            margin: 0px;
+            text-align: center;
+            width: 100%;
+        }
+        .details {
+            background-color: #DFEADD;
+            border-radius: 10px;
+        }
+        #details-title {
+            color: #795F55;
+            font-family: 'Gaegu';
+            font-size: 2.5vw;
+            width: 5vw;
+            text-align: left;
+            margin: 5px;
+            float: left;
+            background-color: #DFEADD;
+            border-radius: 5px;
+        }
+        #add {
+            color: #795F55;
+            font-family: 'Gaegu';
+            font-size: 2.5vw;
+            width: 5vw;
+            float: right;
+            text-align: right;
+            margin: 5px;
+            background-color: #EEF8EC;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .bg1 {
+            background-color: #FFCDDD;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 0.2vw;;
+            border-bottom-style: solid;
+            border-bottom-color: white;
+        }
+        .heart {
+            height: 2vw;
+        }
+        .cname {
+            color: #795F55;
+            font-family: 'Gaegu';
+            font-size: 2.5vw;
+            margin-bottom: 0px;
+        }
+        .cname1 {
+            color: #795F55;
+            font-family: 'Gaegu';
+            font-size: 2.5vw;
+            background-color: #FCFDF3;
+            border-radius: 10px;
+            width: 17vw;
+            text-align: center;
+            margin-left: 1.1vw;
+            margin-bottom: 0.8vw;
+        }
+        #search {
+            color: #795F55;
+            font-family: 'Gaegu';
+            font-size: 2.5vw;
+            margin: auto;
+        }
+        .bg2 {
+            background-color: #fcd5db;
+            border-right: 5vw;
+            border-right-style: solid;
+            border-right-color: #FCF7EC;
+            border-left: 5vw;;
+            border-left-style: solid;
+            border-left-color: #FCF7EC;
+            border-bottom: 0.2vw;;
+            border-bottom-style: solid;
+            border-bottom-color: white;
+            padding-bottom: 5px;
+            height: 3vw;
+        }
+        .bg3 {
+            background-color: #fcd5db;
+            border-radius: 15px;
+        }
+        .bg4 {
+            background-color: #FFEAF1;
+            border-right: 5vw;
+            border-right-style: solid;
+            border-right-color: #FCF7EC;
+            border-left: 5vw;;
+            border-left-style: solid;
+            border-left-color: #FCF7EC;
+            border-bottom: 0.2vw;;
+            border-bottom-style: solid;
+            border-bottom-color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        #text {
+            border-radius: 5px;
+            border: none;
+            outline-color: black;
+            width: 80%;
+            height: 2.5vw;
+        }
+        #new {
+            height: 1.2vw;
+            margin-bottom: 0.5vw;
+            margin-right: 1vw;
+        }
+        .friendname {
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        #name-text-box {
+            border-radius: 5px;
+            border: none;
+            width: 95%;
+            height: 3.5vw;
+            margin: auto;
+            margin-bottom: 2vw;
+            background-color: #FCFDF3;
+        }
+        #email-text-box {
+            border-radius: 5px;
+            border: none;
+            width: 88%;
+            height: 3.5vw;
+            margin: auto;
+            margin-bottom: 2vw;
+            background-color: #FCFDF3;
+        }
+        #number-text-box {
+            border-radius: 5px;
+            border: none;
+            width: 88%;
+            height: 3.5vw;
+            margin: auto;
+            margin-bottom: 2vw;
+            background-color: #FCFDF3;
+        }
+        #address-text-box {
+            border-radius: 5px;
+            border: none;
+            width: 95%;
+            height: 3.5vw;
+            margin: auto;
+            margin-bottom: 2vw;
+            background-color: #FCFDF3;
+        }
+    </style>
+</head>
+    
+<body>
+    <div class="container-fluid">
+    <table id="heading">
+        <tr>
+            <td><img src="title-pic-1.jpeg" width="200" alt="img1" id="img1"></td>
+            <td><p id="title">MY LITTLE PHONY</p></td>
+            <td><img src="head.png" height="200" alt="img2" id="img2"></td>
+        </tr>
+    </table>
+    </div>
+    
+    <div class="grid-container">
+            <table class="grid-item" id="contact-list">
+                <tr>
+                    <td class="bg1">
+                        <p id="contact-title"><img src="love.png" alt="heart" class="heart"> My Contacts <img src="love.png" alt="heart" class="heart"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg2">
+                        <p id="search">Search:</p>
+                        <input type="text" id="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg4">
+                        <p class="cname">구 씨</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg4">
+                        <p class="cname">염 미 정</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg4">
+                        <p class="cname">염 창 희</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg4">
+                        <p class="cname">염 기 정</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg4">
+                        <p class="cname">조 태 훈</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg3">
+                        <p class="cname"><img src="new.png" alt="heart" id="new">Create new contact</p>
+                    </td>
+                </tr>
+            </table>
+    
+    <div id="contact-details" class="grid-item">
+        <table class="container-fluid" id="cd">
+            <tr>
+                <td colspan="2" class="details"><p id="details-title">Details</p>
+                <p id="add">Add</p></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="friendname">
+                    <p class="cname1">Friend's Name</p>
+                    <input type="text" class="form-control" id="name-text-box">
+                </td>
+            </tr>
+            <tr>
+                <td class="friendname">
+                    <p class="cname1">Email Address</p>
+                    <input type="text" class="form-control" id="email-text-box">
+                </td>
+                <td class="friendname">
+                    <p class="cname1">Phone Number</p>
+                    <input type="text" class="form-control" id="number-text-box">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="friendname">
+                    <p class="cname1">Home Address</p>
+                    <input type="text" class="form-control" id="address-text-box">
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</body>
+</html>
